@@ -41,7 +41,7 @@ fi
 ```
 
 
-### 添加任务计划
+### 在本地Linux虚拟机IP添加任务计划.
 ```javascript
 [root@node1 ~]# crontab -e
 @reboot sleep 15 && /usr/bin/ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
