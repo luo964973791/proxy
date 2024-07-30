@@ -34,5 +34,6 @@ fi
 
 ### 测试.
 ```javascript
+[root@node1 ~]# source /root/.bashrc 
 [root@node1 ~]# proxym
 ```
