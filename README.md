@@ -9,7 +9,7 @@ AllowTcpForwarding yes
 GatewayPorts yes
 
 #在本地虚拟机上面执行下面的命令会卡住不动，是正常的.
-ssh -R 7890:192.168.1.5:7890 root@110.184.161.x -N &
+ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
 ```
 
 
@@ -23,7 +23,7 @@ ssh -R 7890:192.168.1.5:7890 root@110.184.161.x -N &
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias proxym='export https_proxy=http://localhost:7890;export http_proxy=http://localhost:7890;export all_proxy=socks5://localhost:7890'
+alias proxym='export https_proxy=http://localhost:6990;export http_proxy=http://localhost:6990;export all_proxy=socks5://localhost:6990'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -36,4 +36,11 @@ fi
 ```javascript
 [root@node1 ~]# source /root/.bashrc 
 [root@node1 ~]# proxym
+```
+
+
+### 添加任务计划
+```javascript
+[root@node1 ~]# crontab -e
+@reboot sleep 15 && /usr/bin/ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
 ```
