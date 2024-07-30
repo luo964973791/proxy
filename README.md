@@ -30,3 +30,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 ```
+
+
+### 测试.
+```javascript
+[root@node1 ~]# proxym
+```
