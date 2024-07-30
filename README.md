@@ -8,6 +8,8 @@ vi /etc/ssh/sshd_config
 AllowTcpForwarding yes
 GatewayPorts yes
 
+systemctl restart sshd
+
 #在本地虚拟机上面执行下面的命令会卡住不动，是正常的.
 ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
 ```
