@@ -25,7 +25,7 @@ ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias proxym='export https_proxy=http://localhost:6990;export http_proxy=http://localhost:6990;export all_proxy=socks5://localhost:6990'
+alias myproxy='export https_proxy=http://localhost:6990;export http_proxy=http://localhost:6990;export all_proxy=socks5://localhost:6990'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -37,7 +37,7 @@ fi
 ### 测试.
 ```javascript
 [root@node1 ~]# source /root/.bashrc 
-[root@node1 ~]# proxym
+[root@node1 ~]# myproxy
 ```
 
 
