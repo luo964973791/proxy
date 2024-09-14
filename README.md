@@ -37,10 +37,21 @@ fi
 
 ### 在本地Linux虚拟机IP添加任务计划.
 ```javascript
-sudo cat << EOF > /etc/cron.d/ssh_tunnel
-@reboot root sleep 15 && /usr/bin/ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
+sudo cat << EOF > /etc/systemd/system/ssh_tunnel.service
+[Unit]
+Description=SSH Reverse Tunnel Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ssh -R 6990:192.168.197.18:7890 root@182.43.192.54 -N
+User=root
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
 EOF
-chmod 644 /etc/cron.d/ssh_tunnel
+systemctl enable ssh_tunnel
 
 #在本地Linux虚拟机上面更改SSH配置.
 vi /etc/ssh/sshd_config
