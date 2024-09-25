@@ -6,6 +6,7 @@
 #在本地虚拟机上面执行下面的命令会卡住不动，是正常的.
 ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
 ssh -R 6990:192.168.1.5:7890 root@110.184.161.x -N &
+sed -i 's/#AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config && systemctl restart sshd
 ```
 
 
