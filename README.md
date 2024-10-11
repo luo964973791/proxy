@@ -38,7 +38,7 @@ fi
 
 ### 在本地Linux虚拟机IP添加任务计划.
 ```javascript
-sudo cat << EOF > /etc/systemd/system/ssh_tunnel.service
+sudo cat << EOF > /usr/lib/systemd/system/ssh_tunnel.service
 [Unit]
 Description=SSH Reverse Tunnel Service
 After=network.target
