@@ -20,7 +20,7 @@ sed -i 's/#AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config &
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias myproxy='export https_proxy=http://localhost:6990;export http_proxy=http://localhost:6990;export all_proxy=socks5://localhost:6990'
+alias clear='export https_proxy=http://localhost:7890; export http_proxy=http://localhost:7890; export all_proxy=socks5://localhost:7890; /usr/bin/clear'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
